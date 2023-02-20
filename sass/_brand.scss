@@ -1,0 +1,15 @@
+.brand {
+  margin-bottom: 120px;
+  &-heading {
+    font-weight: 500;
+    margin-bottom: 80px;
+    text-align: center;
+    font-family: $secondary-font;
+    color: $blackColor;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

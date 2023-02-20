@@ -1,0 +1,55 @@
+.header {
+  padding: 16px 0;
+  background: $bg;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    &-link {
+      position: relative;
+      font-weight: 500;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      transition: 0.2s linear;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background-color: $headingColor;
+        bottom: -3px;
+        right: 0;
+        left: 0;
+        transition: 0.2s linear;
+      }
+      &:hover {
+        color: $headingColor;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      &.active {
+        color: $headingColor;
+      }
+    }
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    i {
+      font-size: 20px;
+      color: $textColor;
+      cursor: pointer;
+    }
+  }
+  &-btn {
+    padding: 12px 39px;
+    margin-left: 10px;
+  }
+}
