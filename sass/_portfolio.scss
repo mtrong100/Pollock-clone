@@ -29,3 +29,10 @@
     }
   }
 }
+@media screen and (max-width: 600px) {
+  .portfolio {
+    &-item span {
+      font-size: 14px;
+    }
+  }
+}

@@ -17,7 +17,9 @@
     <!-- WRAPPER -->
     <div class="wrapper">
       <!-- HEADER -->
-      <header class="header">
+      <header class="header" id="home" id="top">
+        <img class="header-shape" srcset="./images/bg-shapes.png 2x" alt="" />
+        <!-- HEADER MENU -->
         <div class="container">
           <div class="header-container">
             <!-- LOGO -->
@@ -28,38 +30,44 @@
             <!-- MENU -->
             <ul class="menu">
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2 active">Home</a>
+                <a href="#" class="logo">
+                  <img srcset="./images/logo.png 2x" alt="logo" />
+                  <span>Pollock</span>
+                </a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2">Services</a>
+                <a href="#home" class="menu-link normal-text-2 active">Home</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2">About</a>
+                <a href="#services" class="menu-link normal-text-2">Services</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2">Pages</a>
+                <a href="#about" class="menu-link normal-text-2">About</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2">Blog</a>
+                <a href="#pages" class="menu-link normal-text-2">Pages</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link normal-text-2">Contact</a>
+                <a href="#blog" class="menu-link normal-text-2">Blog</a>
+              </li>
+              <li class="menu-item">
+                <a href="#contact" class="menu-link normal-text-2">Contact</a>
+              </li>
+              <li class="menu-item">
+                <button class="header-mobile-btn btn-primary">Sign Up</button>
               </li>
             </ul>
             <!-- HEADER RIGHT SIDE -->
             <div class="header-right">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-solid fa-bars header-toggle"></i>
               <button class="header-btn btn-primary">Sign Up</button>
             </div>
           </div>
         </div>
-      </header>
-      <!-- MAIN -->
-      <main>
         <!-- HERO SECTION -->
         <section class="hero">
-          <img class="hero-shape" srcset="./images/bg-shapes.png 2x" alt="" />
           <a href="#services" class="hero-scroll">
             <div class="hero-circle">
               <img src="./images/icon-arrow-down.svg" alt="" />
@@ -91,6 +99,9 @@
             </div>
           </div>
         </section>
+      </header>
+      <!-- MAIN -->
+      <main>
         <!-- SERVICES -->
         <section class="services" id="services">
           <div class="container">
@@ -151,7 +162,7 @@
           </div>
         </section>
         <!-- ABOUT -->
-        <section class="about">
+        <section class="about" id="about">
           <div class="container">
             <h1 class="about-heading medium-heading">
               Digital products that people love to use
@@ -271,7 +282,7 @@
           </div>
         </section>
         <!-- PORTFOLIO -->
-        <section class="portfolio">
+        <section class="portfolio" id="pages">
           <div class="container">
             <h1 class="portfolio-heading medium-heading-2">
               Explore our recent client success stories and witness our full 360
@@ -307,7 +318,7 @@
           </div>
         </section>
         <!-- CTA -->
-        <section class="cta">
+        <section class="cta" id="blog">
           <img class="cta-shape" src="./images/bg-shapes2.png" alt="" />
           <div class="container">
             <h1 class="cta-heading medium-heading">
@@ -393,7 +404,7 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column" id="contact">
               <h2 class="footer-heading big-text">Newsletter</h2>
               <div class="footer-content">
                 <p class="footer-desc normal-text">
@@ -425,7 +436,33 @@
             </div>
           </div>
         </div>
+        <!-- SCROLL TO TOP BTN -->
+        <a class="scroll-top" href="#top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
       </footer>
     </div>
+
+    <!-- JS -->
+    <script>
+      /* toggle menu on mobile */
+      const toggle = document.querySelector(".header-toggle");
+      const menu = document.querySelector(".menu");
+      toggle.addEventListener("click", handleToggle);
+      function handleToggle() {
+        menu.classList.add("active");
+      }
+
+      /* Click out side */
+      document.addEventListener("click", handleClickOutSide);
+      function handleClickOutSide(e) {
+        console.log(e.target);
+        if (!menu.contains(e.target) && !e.target.matches(".header-toggle")) {
+          menu.classList.remove("active");
+        } else {
+          menu.classList.add("active");
+        }
+      }
+    </script>
   </body>
 </html>

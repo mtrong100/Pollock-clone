@@ -1,9 +1,25 @@
 .footer {
   background: $headingColor;
+  position: relative;
   padding: 105px 0 30px;
   &-top {
     display: flex;
     justify-content: space-between;
+  }
+  .scroll-top {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: $buttonColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15px;
+    right: 20px;
+    font-size: 20px;
+    border-radius: 100rem;
+    cursor: pointer;
+    color: white;
   }
   &-column {
     .logo {
@@ -81,6 +97,33 @@
       align-items: center;
       border-radius: 100rem;
       background-color: $buttonColor;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .footer {
+    padding-top: 50px;
+    &-top {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+    &-column {
+      text-align: center;
+    }
+    &-copyright p {
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer {
+    &-copyright {
+      flex-direction: column;
+      gap: 20px;
+      p {
+        text-align: center;
+      }
     }
   }
 }

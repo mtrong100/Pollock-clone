@@ -44,3 +44,10 @@
     padding: 16px 38px;
   }
 }
+@media screen and (max-width: 769px) {
+  .services {
+    &-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

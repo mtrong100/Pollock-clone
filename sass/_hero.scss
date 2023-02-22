@@ -1,21 +1,8 @@
 .hero {
-  position: relative;
+  // position: relative;
   background: $bg;
-  padding-top: 86px;
+  padding-top: 50px;
   padding-bottom: 200px;
-  &-shape {
-    pointer-events: none;
-    user-select: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
   &-scroll {
     bottom: 0;
     position: absolute;
@@ -64,8 +51,7 @@
     letter-spacing: -0.3px;
   }
   &-banner {
-    // flex-shrink: 0;
-    flex: 1;
+    flex-shrink: 0;
     img {
       width: 100%;
       height: 100%;
@@ -109,5 +95,29 @@
   }
   to {
     transform: translateY(10px);
+  }
+}
+@media screen and (max-width: 769px) {
+  .hero {
+    &-container {
+      flex-direction: column;
+    }
+    &-banner {
+      margin-top: 60px;
+    }
+    &-content {
+      text-align: center;
+    }
+    &-goto {
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    &-heading {
+      font-size: 50px;
+    }
   }
 }

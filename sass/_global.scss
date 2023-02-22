@@ -137,3 +137,14 @@ body {
   color: $grayColor;
   line-height: calc(24 / 14);
 }
+@media screen and (max-width: 600px) {
+  .big-heading {
+    font-size: 30px;
+  }
+  .medium-heading {
+    font-size: 30px;
+  }
+  .medium-heading-2 {
+    font-size: 25px;
+  }
+}

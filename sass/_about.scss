@@ -62,3 +62,19 @@
     padding: 16px 32px;
   }
 }
+@media screen and (max-width: 769px) {
+  .about {
+    &-list {
+      gap: 50px;
+    }
+    &-item {
+      flex-direction: column;
+      &:nth-child(2) {
+        flex-direction: column;
+        .about-content {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
