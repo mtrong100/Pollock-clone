@@ -1,0 +1,123 @@
+.hero {
+  // position: relative;
+  background: $bg;
+  padding-top: 86px;
+  padding-bottom: 200px;
+
+  &-scroll {
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+  &-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $yellowColor;
+    border-radius: 100rem;
+    animation: bounced 1s linear infinite alternate;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-content {
+    max-width: 770px;
+    margin: 0 auto;
+  }
+  &-heading {
+    font-size: 72px;
+    font-weight: 500;
+    line-height: calc(78 / 72);
+    letter-spacing: -2px;
+    color: $headingColor;
+    margin-bottom: 40px;
+    font-family: $secondary-font;
+    span {
+      background: linear-gradient(91.79deg, #857fff 32.21%, #ffc0ec 83.79%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+  &-desc {
+    margin-bottom: 70px;
+    max-width: 670px;
+    width: 100%;
+    letter-spacing: -0.3px;
+  }
+  &-banner {
+    flex-shrink: 0;
+    // flex: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-goto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &-btn {
+    padding: 16px 32px;
+  }
+  &-howitworks {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    h4 {
+      text-transform: uppercase;
+      color: $headingColor;
+      font-weight: 500;
+      font-family: $secondary-font;
+    }
+  }
+  &-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100rem;
+    box-shadow: 0px 5px 20px rgba(18, 2, 47, 0.15);
+    background-color: $whiteColor;
+  }
+}
+/* animation */
+@keyframes bounced {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@media screen and (max-width: 769px) {
+  .hero {
+    padding-top: 60px;
+    &-content {
+      text-align: center;
+    }
+    &-goto {
+      justify-content: center;
+    }
+    &-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    &-heading {
+      font-size: 50px;
+    }
+  }
+}

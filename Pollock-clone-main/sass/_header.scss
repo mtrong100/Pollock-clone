@@ -1,0 +1,155 @@
+.header {
+  position: relative;
+  padding: 16px 0;
+  background: $bg;
+
+  &-shape {
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    // z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      transition: 0.2s linear;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background-color: $headingColor;
+        bottom: -3px;
+        right: 0;
+        left: 0;
+        transition: 0.2s linear;
+      }
+
+      &:hover {
+        color: $headingColor;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      &.active {
+        color: $headingColor;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    i {
+      font-size: 20px;
+      color: $textColor;
+      cursor: pointer;
+    }
+  }
+
+  &-toggle {
+    display: none;
+  }
+
+  &-btn {
+    padding: 12px 39px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .header {
+    .menu {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    &-shape {
+      display: none;
+    }
+
+    &-btn {
+      display: none;
+    }
+
+    &-toggle {
+      display: block;
+    }
+
+    &-mobile-btn {
+      display: flex;
+      width: 100%;
+      padding: 12px 39px;
+      margin-left: 0;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      bottom: 0;
+      width: 250px;
+      z-index: 99;
+      background-color: $whiteColor;
+      transition: 0.2s linear;
+
+      &.active {
+        transform: translate(0);
+      }
+
+      &-item {
+        padding: 5px 30px;
+
+        &:first-child {
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          padding: 20px 0;
+        }
+
+        &:last-child {
+          padding: 5px 10px;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
